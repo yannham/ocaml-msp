@@ -1,0 +1,3 @@
+(executable
+ (name msp_cli)
+ (libraries msp_lib base64))

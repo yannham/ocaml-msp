@@ -1,0 +1,4 @@
+(library
+ (name msp_lib)
+ (libraries zarith bls12_381 sha nocrypto nocrypto.unix)
+ (modules_without_implementation hash pairing parameters random))
