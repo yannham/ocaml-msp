@@ -11,7 +11,7 @@ to the original [zcash library](https://github.com/zcash/librustzcash/tree/maste
 > :warning: **current implementation is not safe**: the hash functions provided
 > for the bls12-386 implementation are currently not safe, and should NOT be
 > used in real cryptographic application, although they should behave
-> reasonnably well.  Future work should include cryptograhically safe hash
+> reasonably well.  Future work should include cryptograhically safe hash
 > functions, such as provided in [this library](https://github.com/kwantam/bls12-381_hash)
 
 There are two components in MSP:
@@ -39,7 +39,7 @@ $ cd ocaml-bls12-381
 $ opam install .
 ```
 
-Install the different depencies of msp:
+Install the dependencies of msp:
 ```
 $ opam install base64 zarith sha nocrypto
 ```
@@ -74,15 +74,15 @@ $ msp_cli.exe aggregate id_msp.pub -o apk.pub
 $ msp_cli.exe verify msg.txt sign_final.o apk.pub
 GOOD signature [sign_final.o] of file msg.txt for key apk.pub
 $ echo "Bad message" > msg_bad.txt
-$ msp_cli.exe verify msg.txt sign_final.o apk.pub
+$ msp_cli.exe verify msg_bad.txt sign_final.o apk.pub
 BAD signature [sign_final.o] of file msg_bad.txt for key apk.pub
 ```
 
 ## Performance
 Benchmarks are left for future development. In general we made the assumption
 that the bottleneck is the computations done on the pairing scheme, in particular for
-bls12-381, which are handled by third-party code. The additionnal operations
-done by MSP should be highly neglectable, as hinted by the time taken by the
+bls12-381, which are handled by third-party code. The additional operations
+done by MSP should be highly negligible, as hinted by the time taken by the
 tests.
 
 Thus, we did not focus on writing high-performance code, but rather on
@@ -92,7 +92,7 @@ writing readable one.
 
 Although this code aims to be a serious implementation, please be aware of the
 following caveats:
- - as mentionned in the introduction, the hash function are currently not proved
+ - as mentioned in the introduction, the hash function are currently not proved
  safe for real usage
  - no protection is provided against timing attacks or more generally
  side-channel attacks
