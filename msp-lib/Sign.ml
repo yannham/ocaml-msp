@@ -48,7 +48,7 @@ module Make
     H.h0 m
     |> G1.exp e
 
-  let combine = prod_g1 
+  let combine = prod_g1
 
   let verify_unsafe apk m sign =
     let p1 = pairing sign G2.(gen () |> inv) in
